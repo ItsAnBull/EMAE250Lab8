@@ -18,4 +18,6 @@ mat2 = [1 0    cosd(76)  0            0              0    cosd(63.4) 0
         0 0           0  0             0    cosd(40.6) -1*cosd(63.4) 0
         0 0           0  0    sind(66.4)    sind(40.6)             0 1];
 
-% ZhouK_Lab8_naive(mat2,'output')
+%ZhouK_Lab8_naive(mat2,'output')
+
+ZhouK_Lab8(mat1,'output');

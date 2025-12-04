@@ -53,8 +53,8 @@ for r=1:size
         % row 1 of U gets the value of row 1 of A
         U(1,:) = A(1,:);
 
-        % first term of l is 1
-        L(1,1) = 1;
+        % first term of l is the dot division
+        L(:,1) = A(:,1)./A(1,1);
 
     end
 
