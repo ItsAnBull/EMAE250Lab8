@@ -1,0 +1,65 @@
+function ZhouK_Lab8(A, filename)
+
+% length of the matrix
+size = length(A(1,:));
+
+% intialize the u, ustar and l matrices
+U = zeros(size);
+Ustar = zeros(size);
+L = zeros(size);
+
+% for loop for incrementing the row
+for r=1:size
+
+    % edge case to deal with first row
+    if r > 1
+
+        % for loop for implementing the column
+        for c=1:size
+
+            % condition for populating U
+            if col >= row
+
+                % for loop for implementing the first summation
+                for n=1:(r-1)
+
+                    % calculate the summation
+                    summation = L(r,n) * U(n,c);
+
+                end
+
+                % populate the U matrix accordingly
+                U(r,c) = A(r,c) - summation;
+
+            end
+            
+            if col > row
+
+            % for loop for implementing the second summation
+            for n=1:(c-1)
+
+                % calculate the summation
+                summation = L(r,n)*U(n,c);
+
+            end
+
+            % populate the L matrix accordingly
+            L(r,c) = (A(r,c) - summation) / U(c,c);
+
+        end
+
+    else
+
+        % row 1 of U gets the value of row 1 of A
+        U(1,:) = A(1,:);
+
+        % first term of l is 1
+        L(1,1) = 1;
+
+    end
+
+
+end
+
+L
+U
